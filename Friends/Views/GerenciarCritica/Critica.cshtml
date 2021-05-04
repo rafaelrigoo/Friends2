@@ -1,0 +1,25 @@
+﻿@model Critica
+
+<form asp-controller="GerenciarCritica" asp-action="Critica">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Fonte</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" asp-for="Fonte">
+        <span asp-validation-for="Fonte"></span>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Nota</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Nota">
+        <span asp-validation-for="Nota"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Comentário</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" asp-for="Comentario">
+        <span asp-validation-for="Comentario"></span>
+    </div>
+    
+    <div>
+
+        <button class="btn btn-primary" type="submit" asp-action="Critica">Adicionar</button>
+    </div>
+</form>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Temporada>
+
+    <a class="btn btn-primary" asp-action="Temporada">Nova Temporada</a>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Temporada</th>
+                <th>Quando foi ao Ar</th>
+                <th>Quando Terminou</th>
+                <th>Operações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var temp in Model)
+            {
+                <tr>
+                    <td>@temp.Numero</td>
+                    <td>@temp.QuandoFoiLancada</td>
+                    <td>@temp.QuandoTerminou</td>
+                    <td>
+                        <button class="btn btn-secondary" asp-action="EditarEpisodio">Editar</button>
+                        <button class="btn btn-danger" asp-action="Excluir">Excluir</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

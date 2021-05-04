@@ -1,0 +1,22 @@
+﻿@model Elenco
+
+<h1>@Model.Personagem</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome Completo</th>
+            <th>Data de Nascimento</th>
+            <th>Pais de Origem</th>
+        </tr>
+    </thead>
+
+    <tbody>
+         <tr>
+             <td>@Model.NomeReal</td>
+             <td>@Model.DatadeNascimento</td>
+             <td>@Model.Nacionalidade</td>
+         </tr>
+            
+    </tbody>
+
+</table>

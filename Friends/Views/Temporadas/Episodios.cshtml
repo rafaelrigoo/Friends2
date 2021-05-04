@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Episodio>
+
+
+<h1>Lista de Episódios da Temporada @ViewData["NumeroTemporada"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Quando Lançou</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ep in Model)
+        {
+        <tr>
+            <td>
+                <a asp-controller="Temporadas" asp-action="InformacoesEpisodio" >
+                    @ep.Nome 
+                </a>
+            </td>
+            <td>@ep.QuandoFoiLancado</td>
+           
+        </tr>
+        }
+    </tbody>
+</table>
+

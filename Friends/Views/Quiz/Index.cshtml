@@ -1,0 +1,11 @@
+﻿@model Quiz
+
+<h1>Teste seu conhecimento sobre um dos seriados de mais sucesso do mundo!</h1>
+ 
+
+@Model.Pergunta
+
+@foreach(var resposta in Model.Alternativas)
+ {
+    <label><input type="checkbox" /> @resposta.OpcaodeResposta</label>
+ }

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Temporada>
+
+<table class="temporada-capa">
+
+    <tbody>
+        <tr>
+            @foreach (var temp in Model)
+            {
+                <th>
+                    <a asp-action="Episodios" asp-route-numeroTemporada="@temp.Numero."><img src="@temp.CaminhoImagem" /></a>
+                </th>
+            }
+        </tr>
+
+    </tbody>
+
+
+</table>
+
+    @*<tbody>
+
+        <tr>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="1"><img src="~/imagens/temnporada1capa.jpg" /></a> </th>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="2"><img src="~/imagens/temporada2capa.jpg" /></a> </th>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="3"><img src="~/imagens/temporada3novacapa.jpg" /></a> </th>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="4"><img src="~/imagens/temporada4capa.jpg" /></a> </th>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="5"><img src="~/imagens/temporada5capanova.jpg" /></a> </th>
+
+        </tr>
+        <tr>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="6"><img src="~/imagens/temporada6capa.jpg" /></a> </th>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="7"><img src="~/imagens/temporada7capa.jpg" /></a> </th>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="8"><img src="~/imagens/temporada8capa.jpg" /></a> </th>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="9"><img src="~/imagens/temporada9capa.jpg" /></a> </th>
+            <th><a asp-action="Episodios" asp-route-numeroTemporada="10"><img src="~/imagens/temporada10capa.jpg" /></a> </th>
+        </tr>
+
+    </tbody>*@
+

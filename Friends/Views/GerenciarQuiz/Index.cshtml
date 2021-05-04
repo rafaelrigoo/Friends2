@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Quiz>
+
+    <a class="btn btn-primary" asp-action="Quiz">Nova Temporada</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Perguntas</th>
+            <th>Operações</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pergunta in Model)
+        {
+            <tr>
+
+                <td>@pergunta.Pergunta</td>
+                <td>
+                    <button class="btn btn-secondary" asp-action="EditarEpisodio">Editar</button>
+                    <button class="btn btn-danger" asp-action="Excluir">Excluir</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

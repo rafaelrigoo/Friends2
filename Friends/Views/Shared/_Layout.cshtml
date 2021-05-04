@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Friends</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/aplicacao.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+               
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="SeriadoInfo" asp-action="Index">Principal Informações</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Elenco" asp-action="Index">Elenco Principal</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Temporadas" asp-action="Index">Temporadas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Critica" asp-action="Index">Critica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Curiosidade" asp-action="Index">Curiosidades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Quiz" asp-action="Index">Quiz</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                           <li class="nav-item dropdown">
+                               <a class="nav-link dropdown-toggle li-paraesquerda" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Adicionar Informações</a>
+                               <ul class="dropdown-menu">
+                                 <li><a class="dropdown-item" asp-controller="GerenciarTemporada" asp-action="Index">Temporada</a></li>
+                                 <li><a class="dropdown-item" asp-controller="GerenciarEpisodio" asp-action="Index">Episódio</a></li>
+                                 <li><a class="dropdown-item" asp-controller="GerenciarElenco" asp-action="Index">Elenco</a></li>
+                                 <li><a class="dropdown-item" asp-controller="GerenciarCriadoPor" asp-action="Index">Criadores</a></li>
+                                 <li><a class="dropdown-item" asp-controller="GerenciarCuriosidade" asp-action="Index">Curiosidade</a></li>
+                                 <li><a class="dropdown-item" asp-controller="GerenciarCritica" asp-action="Index">Critica</a></li>
+                                 <li><a class="dropdown-item" asp-controller="GerenciarQuiz" asp-action="Index">Quiz</a></li>
+                            
+                               </ul>
+                           </li>
+                
+                        }
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark li-paraesquerda" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                    </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+
+            @RenderBody()
+
+        </main>
+    </div>
+   
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Friends - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

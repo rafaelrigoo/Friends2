@@ -1,0 +1,30 @@
+﻿@model Episodio
+
+<form asp-controller="GerenciarEpisodio" asp-action="Episodio">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Nome do Episódio</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" asp-for="Nome">
+        <span asp-validation-for="Nome"></span>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Temporada</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Temporada.Numero">
+        <span asp-validation-for="Temporada.Numero"></span>
+    </div>
+
+    @*<div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Participação Especial</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="ParticipacaoEspecial.NomeReal">
+        <span asp-validation-for="ParticipacaoEspecial.NomeReal"></span>
+
+    </div>*@
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Sinopse</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Sinopse">
+        <span asp-validation-for="Sinopse"></span>
+    </div>
+    <div>
+
+        <button class="btn btn-primary" type="submit" asp-action="Episodio">Adicionar</button>
+    </div>
+</form>

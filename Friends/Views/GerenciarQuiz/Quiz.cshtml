@@ -1,0 +1,27 @@
+﻿@model Quiz
+
+
+<form asp-controller="GerenciarQuiz" asp-action="Quiz">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Pergunta</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" asp-for="Pergunta">
+        <span asp-validation-for="Pergunta"></span>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Alternativa Correta</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Alternativas">
+        <span asp-validation-for="Alternativas"></span>
+    </div>
+
+    @* O que devo fazer nesse caso para o gerenciador do site consiga cadastrar tb as alternativas incorretas que ele quer mostrar para o usuario final?
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Alternativa Errada</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Alternativas">
+            <span asp-validation-for="Alternativas"></span>
+        </div>
+    *@
+    <div>
+
+        <button class="btn btn-primary" type="submit" asp-action="Quiz">Adicionar</button>
+    </div>
+</form>

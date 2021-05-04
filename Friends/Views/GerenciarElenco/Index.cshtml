@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Elenco>
+
+    <a class="btn btn-primary" asp-action="Elenco">Novo Artista</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Personagem</th>
+            <th>Nome Real</th>
+            <th>Data de Nascimento</th>
+            <th>Nacionalidade</th>
+            <th>Estado Civil</th>
+            <th>Quantidade de Filhos</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var artista in Model)
+        {
+            <tr>
+                <td>@artista.Personagem</td>
+                <td>@artista.NomeReal</td>
+                <td>@artista.DatadeNascimento</td>
+                <td>@artista.Nacionalidade</td>
+                <td>@artista.EstadoCivil</td>
+                <td>@artista.QuantidadedeFilhos</td>
+                <td>
+                    <button class="btn btn-secondary" asp-action="EditarEpisodio">Editar</button>
+                    <button class="btn btn-danger" asp-action="Excluir">Excluir</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

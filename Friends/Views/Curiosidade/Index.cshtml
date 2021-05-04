@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Elenco>
+
+
+    <h1>Sobre quem você gostaria de saber mais</h1>
+    <body>
+        @foreach(var imagem in Model)
+        {
+         <a asp-controller="Curiosidade" asp-action="@imagem.Personagem">
+            <img class="imagem-curiosidade" src="@imagem.CaminhoImagem" />
+         </a>
+        }
+
+
+        @*<a asp-controller="Curiosidades" asp-action="Joey">
+        <img class="imagem-curiosidade" src="~/imagens/joey.jpeg" />
+        </a>
+
+        <img class="imagem-curiosidade" src="~/imagens/chandler.jpg" />
+        <img class="imagem-curiosidade" src="~/imagens/ross.jpg" />
+        <img class="imagem-curiosidade" src="~/imagens/monica.jpg" />
+        <img class="imagem-curiosidade" src="~/imagens/phoebe.jpg" />
+        <img class="imagem-curiosidade" src="~/imagens/rachel.jpg" />*@
+        
+    </body>

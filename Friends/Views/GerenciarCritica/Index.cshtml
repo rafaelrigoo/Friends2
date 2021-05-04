@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Critica>
+
+    <a class="btn btn-primary" asp-action="Critica">Nova Temporada</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Fonte</th>
+            <th>Nota</th>
+            <th>Comentário</th>
+            <th>Operações</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var critic in Model)
+        {
+            <tr>
+                <td>@critic.Fonte</td>
+                <td>@critic.Nota</td>
+                <td>@critic.Comentario</td>
+                <td>
+                    <button class="btn btn-secondary" asp-action="EditarEpisodio">Editar</button>
+                    <button class="btn btn-danger" asp-action="Excluir">Excluir</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

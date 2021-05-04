@@ -1,0 +1,26 @@
+﻿@model Curiosidade
+
+
+<form asp-controller="GerenciarCuriosidade" asp-action="Curiosidade">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Escolha o Artista</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" asp-for="Artista.Personagem">
+        <span asp-validation-for="Artista.Personagem"></span>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Escolha o Episódio</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Episodio.Nome">
+        <span asp-validation-for="Episodio.Nome"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Descrição</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" asp-for="Descricao">
+        <span asp-validation-for="Descricao"></span>
+    </div>
+    
+    <div>
+
+        <button class="btn btn-primary" type="submit" asp-action="Curiosidade">Adicionar</button>
+    </div>
+</form>

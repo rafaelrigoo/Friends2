@@ -1,0 +1,41 @@
+﻿.imagem-fundo{
+    opacity: 0.8;
+    width: 940px;
+    margin: 0 0 0 0;
+    
+}
+
+.imagem-curiosidade{
+    width: 300px;
+    margin: 4px 4px 4px 4px;
+    padding: 4px 4px 4px 4px;
+}
+
+.login-aba{
+    text-align:left;
+}
+
+.temporada-capa{
+    width: 940px;
+    padding: 8px 8px 8px 8px;
+    margin: 8px 8px 8px 8px;
+}
+
+.titulo-seriadoinfoview{
+    width: 940px;
+    object-fit: cover;
+    padding: 8px 8px 10px;
+    margin: 4px 4px;
+}
+
+.imagem-login {
+    height: 20px;
+}
+
+.tamanho-textobotao {
+    font-size: 16px;    
+}
+
+.card-largura{
+    max-width: 18rem;
+}

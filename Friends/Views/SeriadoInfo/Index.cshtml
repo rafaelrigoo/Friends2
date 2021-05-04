@@ -1,0 +1,48 @@
+﻿@model SeriadoInfo
+
+
+<figure>
+    <img class="titulo-seriadoinfoview" src="~/imagens/tituloparaview.jpg" />
+</figure>
+ <table class=" table">
+      
+     <tbody>
+         <tr>
+             <th>Elenco Principal</th>
+             <td>
+                 @foreach(var elenco in Model.Elenco)
+                    {
+                        <a asp-controller="ElencoeProducao" asp-action="FichaCompleta" asp-route-personagem="@elenco.Personagem">@elenco.NomeReal</a>
+                        <br/>
+                    }
+             </td>
+         </tr>
+         <tr>
+             <th>Gênero</th>
+             <td>@Model.Genero</td>
+         </tr>
+         <tr>
+             <th>Criadores</th>
+             <td>
+                 @foreach (var producao in Model.Criadores)
+                 {
+                     <a asp-controller = "ElencoeProducao" asp-action = "FichaCompleta" asp-route-nomeReal = "@producao.NomeReal" > @producao.NomeReal</a>
+                     <br/>
+                 }
+
+             </td>
+         </tr>
+         <tr>
+             <th>Numero de Temporadas</th>
+             <td>@Model.TotaldeTemporadas</td>
+         </tr>
+         <tr>
+             <th>Numero de Episódios</th>
+             <td>
+                 <a asp-controller="Temporadas" asp-action="Index">@Model.TotaldeEpisodios (Lista de Episódios por Temporada)</a>
+             </td>
+         </tr>
+
+     </tbody>
+
+ </table>

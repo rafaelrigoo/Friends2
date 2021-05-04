@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Curiosidade>
+
+<body>
+    <p>Curiosidade - 1</p>
+    @foreach (var curiosidade in Model)
+    {
+        <p>@curiosidade.Descricao</p>
+    }
+</body>

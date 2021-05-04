@@ -1,0 +1,22 @@
+﻿@model Temporada
+
+<h1>O que você gostaria de adicionar ou alterar na sua Temporada?</h1>
+
+
+<form asp-controller="GerenciarTemporada" asp-action="Temporada">
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Alterar Episódio mais visto</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="EpisodioMaisVisto.Nome">
+        <span asp-validation-for="EpisodioMaisVisto.Nome"></span>
+    </div>
+    <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputGroupFile02" asp-for="CaminhoImagem">
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        <span asp-validation-for="CaminhoImagem"></span>
+
+    </div>
+    <div>
+
+        <button class="btn btn-primary" type="submit" asp-action="Temporada">Adicionar</button>
+    </div>
+</form>
