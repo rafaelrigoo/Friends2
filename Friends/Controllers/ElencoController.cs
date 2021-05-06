@@ -11,23 +11,34 @@ namespace Friends.Controllers
     {
         public IActionResult Index()
         {
+            var monica = new Elenco();
+            monica.Personagem = "Monica";
+            monica.Nacionalidade = "Estados Unidos";
+            monica.CaminhoImagem = "/imagens/monicageller.jpg";
+
             var joey = new Elenco();
             joey.Personagem = "Joey";
-            joey.NomeReal = "Matthew Steven LeBlanc";
-            joey.DatadeNascimento = new DateTime (1967,07,25);
-            joey.Nacionalidade = "Estados Unidos";
-            joey.CaminhoImagem = "/imagens/joey.jpeg";
+            joey.NomeReal = "Joey";
+            joey.CaminhoImagem = "/imagens/joeytribiani.jpg";
+
+            var rachel = new Elenco();
+            rachel.CaminhoImagem = "/imagens/rachelgreen.jpg";
+            rachel.NomeReal = "Rachel";
+            rachel.Personagem = "Rachel";
 
             var ross = new Elenco();
+            ross.CaminhoImagem = "/imagens/rossgeller.jpg";
             ross.Personagem = "Ross";
-            ross.NomeReal = "Ross";
-            ross.CaminhoImagem = "/imagens/ross.jpg";
 
-            var david = new Elenco();
-            david.NomeReal = "David Crane";
+            var phoebe = new Elenco();
+            phoebe.CaminhoImagem = "/imagens/phoebebuffay.jpg";
+            phoebe.Personagem = "Phoebe";
+
+            var chandler = new Elenco();
+            chandler.CaminhoImagem = "/imagens/chandlerbing.jpg";
 
 
-            var joeylista = new List<Elenco>() { joey, ross, david };
+            var joeylista = new List<Elenco>() {  joey, phoebe, rachel, monica, ross,chandler };
 
             return View(joeylista);
         }

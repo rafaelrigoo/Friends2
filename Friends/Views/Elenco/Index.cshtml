@@ -4,22 +4,23 @@
 <section class="container">
     <div class="row justify-content-center">
 
-        @foreach (var artista in Model)
-        {
-
-            <div class="card border border-dark card-largura col-md-3 p-0 m-2">
-                <img src="@artista.CaminhoImagem" class="card-img-top">
-                <div class="card-body">
-                    <a asp-controller="ElencoeProducao" asp-action="FichaCompleta" asp-route-personagem="@artista.Personagem"
-                       class="btn btn-primary btn-block btn-sm tamanho-textobotao">@artista.Personagem</a>
-                </div>
-                <div>
-                    @*<a asp-controller="Curiosidade" asp-action=""*@
-                </div>
+        <div class="container">
+            <div class="row">
+                
+                    @foreach (var artista in Model)
+                    {
+                        <div class="card border border-dark col-md-12 p-0 m-2 card-dimensao">
+                            <img src="@artista.CaminhoImagem" class="card-img-top">
+                            <div class="card-body">
+                            <a asp-controller="ElencoeProducao" asp-action="FichaCompleta" asp-route-personagem="@artista.Personagem"
+                               class="btn btn-primary btn-block btn-sm tamanho-textobotao">@artista.Personagem</a>
+                            </div>
+                        </div>
+                    }
             </div>
-        }
+        </div>
+
 
     </div>
-
 </section>
 

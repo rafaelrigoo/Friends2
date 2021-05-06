@@ -6,7 +6,7 @@
         <tr>
             @foreach (var temp in Model)
             {
-                <th>
+                <th class="temporada-capa">
                     <a asp-action="Episodios" asp-route-numeroTemporada="@temp.Numero."><img src="@temp.CaminhoImagem" /></a>
                 </th>
             }

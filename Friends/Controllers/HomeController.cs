@@ -24,13 +24,17 @@ namespace Friends.Controllers
             
             var imagem1 = new Destaque();
             imagem1.CaminhoImagem = "/imagens/friendsfundo.jpg";
-            var imagem3 = new Destaque();
-            imagem3.CaminhoImagem = "/imagens/imagem-carrosel.jpg";
+           
+            var imagem5 = new Destaque();
+            imagem5.CaminhoImagem = "/imagens/carrosel2.jpg";
 
-            var imagem4 = new Destaque();
-            imagem4.CaminhoImagem = "/imagens/imagem-carrosel4.jpg";
+            var imagem6 = new Destaque();
+            imagem6.CaminhoImagem = "/imagens/carrosel3.jpg";
 
-            var lista = new List<Destaque>() { imagem1, imagem3, imagem4 };
+            var imagem2 = new Destaque();
+            imagem2.CaminhoImagem = "/imagens/imagem-carrosell.jpg";
+
+            var lista = new List<Destaque>() { imagem2, imagem6, imagem5,  imagem1};
 
 
             return View(lista);

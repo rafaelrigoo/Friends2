@@ -16,9 +16,7 @@
 }
 
 .temporada-capa{
-    width: 940px;
-    padding: 8px 8px 8px 8px;
-    margin: 8px 8px 8px 8px;
+   
 }
 
 .titulo-seriadoinfoview{
@@ -36,6 +34,6 @@
     font-size: 16px;    
 }
 
-.card-largura{
+.card-dimensao{
     max-width: 18rem;
-}
+  }
