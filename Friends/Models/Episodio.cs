@@ -27,7 +27,7 @@ namespace Friends.Models
             ParticipacaoEspecial = new List<ParticipacaoEspecial>();
         }
         public int Id { get; set; }
-        public int EpisodioId { get; set; }
+        
 
         /// <summary>
         /// Nome do episodio.

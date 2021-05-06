@@ -37,11 +37,13 @@ namespace Friends.Dados
         {
             base.OnModelCreating(modelBuilder);
 
+            // modelBuilder.Entity<Episodio>().HasOne(p => p.Temporada);
 
-            modelBuilder.Entity<Episodio>().HasOne(p => p.Temporada);
-
-        
-            modelBuilder.Entity<Temporada>().HasMany(p => p.Episodios);
+            modelBuilder.Entity<Temporada>()
+                .HasMany(t => t.Episodios)
+                .WithOne(e => e.Temporada);
+            
+            
             modelBuilder.Entity<Temporada>().HasOne(p => p.EpisodioMaisVisto); 
 
           

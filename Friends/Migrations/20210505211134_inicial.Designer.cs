@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Friends.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20210503193008_inicial")]
+    [Migration("20210505211134_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -91,9 +91,11 @@ namespace Friends.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Fonte")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nota")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SeriadoInfoId")
@@ -117,6 +119,7 @@ namespace Friends.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Descricao")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("EpisodioId")
@@ -209,9 +212,6 @@ namespace Friends.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("EpisodioId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ErrosdeGravacao")
                         .HasColumnType("nvarchar(max)");
 
@@ -223,20 +223,14 @@ namespace Friends.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Sinopse")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TemporadaId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TemporadaId1")
+                    b.Property<int>("TemporadaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TemporadaId");
-
-                    b.HasIndex("TemporadaId1");
 
                     b.ToTable("Episodios");
                 });
@@ -298,9 +292,6 @@ namespace Friends.Migrations
 
                     b.Property<DateTime>("QuandoTerminou")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("TemporadaId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -378,12 +369,10 @@ namespace Friends.Migrations
             modelBuilder.Entity("Friends.Models.Episodio", b =>
                 {
                     b.HasOne("Friends.Models.Temporada", "Temporada")
-                        .WithMany()
-                        .HasForeignKey("TemporadaId");
-
-                    b.HasOne("Friends.Models.Temporada", null)
                         .WithMany("Episodios")
-                        .HasForeignKey("TemporadaId1");
+                        .HasForeignKey("TemporadaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Temporada");
                 });

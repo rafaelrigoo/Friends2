@@ -79,8 +79,8 @@ namespace Friends.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Fonte = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Nota = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Fonte = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nota = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Comentario = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SeriadoInfoId = table.Column<int>(type: "int", nullable: true)
                 },
@@ -124,7 +124,7 @@ namespace Friends.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ArtistaId = table.Column<int>(type: "int", nullable: true),
                     EpisodioId = table.Column<int>(type: "int", nullable: true),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SeriadoInfoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -174,7 +174,6 @@ namespace Friends.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TemporadaId = table.Column<int>(type: "int", nullable: false),
                     Numero = table.Column<byte>(type: "tinyint", nullable: false),
                     QuandoFoiLancada = table.Column<DateTime>(type: "datetime2", nullable: false),
                     QuandoTerminou = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -192,13 +191,11 @@ namespace Friends.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    EpisodioId = table.Column<int>(type: "int", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TemporadaId = table.Column<int>(type: "int", nullable: true),
+                    TemporadaId = table.Column<int>(type: "int", nullable: false),
                     QuandoFoiLancado = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ErrosdeGravacao = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Sinopse = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TemporadaId1 = table.Column<int>(type: "int", nullable: true)
+                    Sinopse = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -208,13 +205,7 @@ namespace Friends.Migrations
                         column: x => x.TemporadaId,
                         principalTable: "Temporadas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Episodios_Temporadas_TemporadaId1",
-                        column: x => x.TemporadaId1,
-                        principalTable: "Temporadas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -268,11 +259,6 @@ namespace Friends.Migrations
                 column: "TemporadaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Episodios_TemporadaId1",
-                table: "Episodios",
-                column: "TemporadaId1");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Temporadas_EpisodioMaisVistoId",
                 table: "Temporadas",
                 column: "EpisodioMaisVistoId");
@@ -316,6 +302,7 @@ namespace Friends.Migrations
                 principalTable: "Episodios",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -18,7 +18,6 @@ namespace Friends.Models
             Numero = numero;
         }
         public int Id { get; set; }
-        public int TemporadaId { get; set; }
         [Required(ErrorMessage = "Número da temporada é obrigatório")]
         public byte Numero { get; set; }
         public IList<Episodio> Episodios { get; set; }
