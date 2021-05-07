@@ -1,4 +1,5 @@
-﻿using Friends.Models;
+﻿using Friends.Dados;
+using Friends.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Friends.Controllers
 {
     public class CuriosidadeController : Controller
     {
+        private readonly ApplicationContext applicationContext;
+
+        public CuriosidadeController(ApplicationContext applicationContext)
+        {
+            this.applicationContext = applicationContext;
+        }
+
         public IActionResult Index()
         {
             var joey = new Elenco();

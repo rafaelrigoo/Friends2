@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Friends.Dados;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,13 @@ namespace Friends.Controllers
 {
     public class CriticaController : Controller
     {
-       
+        private readonly ApplicationContext applicationContext;
+
+        public CriticaController(ApplicationContext applicationContext)
+        {
+            this.applicationContext = applicationContext;
+        }
+
         public IActionResult Index()
         {
             

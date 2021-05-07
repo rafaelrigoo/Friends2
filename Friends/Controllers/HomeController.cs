@@ -1,4 +1,5 @@
-﻿using Friends.Models;
+﻿using Friends.Dados;
+using Friends.Models;
 using Friends.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -13,31 +14,21 @@ namespace Friends.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationContext applicationContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationContext applicationContext)
         {
             _logger = logger;
+            this.applicationContext = applicationContext;
         }
 
         public IActionResult Index()
         {
             
-            var imagem1 = new Destaque();
-            imagem1.CaminhoImagem = "/imagens/friendsfundo.jpg";
-           
-            var imagem5 = new Destaque();
-            imagem5.CaminhoImagem = "/imagens/carrosel2.jpg";
-
-            var imagem6 = new Destaque();
-            imagem6.CaminhoImagem = "/imagens/carrosel3.jpg";
-
-            var imagem2 = new Destaque();
-            imagem2.CaminhoImagem = "/imagens/imagem-carrosell.jpg";
-
-            var lista = new List<Destaque>() { imagem2, imagem6, imagem5,  imagem1};
+            var imagens = applicationContext.Destaques;
 
 
-            return View(lista);
+            return View(imagens);
         }
 
         public IActionResult Privacy()
