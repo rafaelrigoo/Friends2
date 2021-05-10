@@ -19,7 +19,7 @@ namespace Friends.Controllers
         }
         public IActionResult Index()
         {
-            var seriadoInfo = applicationContext.Informacoes.Include(s => s.Elenco).Include(s => s.Criadores);
+            var seriadoInfo = applicationContext.Informacoes.Include(s => s.Elenco).Include(s => s.Criadores).First();
             return View(seriadoInfo);
         }
     }

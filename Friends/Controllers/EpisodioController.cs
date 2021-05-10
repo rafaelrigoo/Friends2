@@ -16,11 +16,8 @@ namespace Friends.Controllers
 
         public IActionResult ParticipacaoEspecial()
         {
-            var episodio1 = new Episodio("The Pilot", new Temporada(1));
-            // episodio1.ParticipacaoEspecial.NomeReal = "Bruce Willians";
-            // episodio1.ParticipacaoEspecial.Personagem = "Paul Stevens";
-
-            return View(episodio1);
+           
+            return View();
         }
 
         public IActionResult AdicionarEpisodios(Episodio episodio)

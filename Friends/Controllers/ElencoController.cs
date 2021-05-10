@@ -27,7 +27,7 @@ namespace Friends.Controllers
       
         public IActionResult FichaCompleta(Elenco artista)
         {
-            var informacoesSobre = applicationContext.Elenco;
+            var informacoesSobre = applicationContext.Elenco.First(p => p.Personagem == artista.Personagem);
             return View(informacoesSobre);
         }
     }
