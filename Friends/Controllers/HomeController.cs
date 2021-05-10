@@ -27,8 +27,10 @@ namespace Friends.Controllers
             
             var imagens = applicationContext.Destaques;
 
+            var imagensEmOrdem = imagens.OrderByDescending(i => i.Id);
 
-            return View(imagens);
+
+            return View(imagensEmOrdem);
         }
 
         public IActionResult Privacy()

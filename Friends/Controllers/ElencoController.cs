@@ -27,7 +27,8 @@ namespace Friends.Controllers
       
         public IActionResult FichaCompleta(Elenco artista)
         {
-            return View(artista);
+            var informacoesSobre = applicationContext.Elenco;
+            return View(informacoesSobre);
         }
     }
 }

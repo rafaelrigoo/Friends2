@@ -1,6 +1,7 @@
-﻿using Friends.Dados;
+﻿ using Friends.Dados;
 using Friends.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Friends.Controllers
         }
         public IActionResult Index()
         {
-            var seriadoInfo = applicationContext.Informacoes;
+            var seriadoInfo = applicationContext.Informacoes.Include(s => s.Elenco).Include(s => s.Criadores);
             return View(seriadoInfo);
         }
     }
