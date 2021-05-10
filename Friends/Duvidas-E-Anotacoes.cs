@@ -9,5 +9,7 @@ namespace Friends
     {
         //a respeito da Migration e criacao de tabelas, explicar o que foi feito.
 
+
+
     }
 }
