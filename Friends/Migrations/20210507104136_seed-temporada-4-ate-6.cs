@@ -3,165 +3,169 @@ using System;
 
 namespace Friends.Migrations
 {
-    public partial class seedepisodios : Migration
+    public partial class seedtemporada4ate6 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            //temporada 1 
+            //temporada 4 
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Pilot", 1, new DateTime(1994, 09, 22) });
+             new object[] { "Aquele com a Água-Viva", 4, new DateTime(1997, 09, 25) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele da Ultrasonografia no Final", 1, new DateTime(1994, 09, 29) });
+             new object[] { "Aquele do Gato", 4, new DateTime(1997, 10, 02) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-            new object[] { "Aquele do Dedão", 1, new DateTime(1994, 10, 06) });
+             new object[] { "Aquele das Algemas", 4, new DateTime(1997, 10, 09) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-            new object[] { "Aquele com George Stephanopoulos", 1, new DateTime(1994, 10, 13) });
+             new object[] { "Aquele da Dança de Salão", 4, new DateTime(1997, 10, 16) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+             new object[] { "Aquele com a Nova Namorada do Joey", 4, new DateTime(1997, 10, 30) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+             new object[] { "Aquele com a Garota Suja", 4, new DateTime(1997, 11, 06) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+             new object[] { "Aquele em que Chandler Passa dos Limites", 4, new DateTime(1997, 11, 13) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+             new object[] { "Aquele do Chandler na Caixa", 4, new DateTime(1997, 11, 20) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+             new object[] { "Aquele em que Eles vão se Divertir", 4, new DateTime(1997, 12, 11) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele com a Garota de Poughkeepsie", 4, new DateTime(1997, 12, 18) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele com o Útero da Phoebe", 4, new DateTime(1998, 01, 08) });
 
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele com o Sabão em pó da Alemanha Oriental", 1, new DateTime(1994, 10, 20) });
+           new object[] { "Aquele dos Embriões", 4, new DateTime(1998, 01, 15) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele do Traseiro", 1, new DateTime(1994, 10, 27) });
+           new object[] { "Aquele com a Paquera da Rachel", 4, new DateTime(1998, 01, 29) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele do Blecaute", 1, new DateTime(1994, 11, 03) });
+           new object[] { "Aquele Sobre o Dia Sujo do Joey", 4, new DateTime(1998, 02, 05) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele em que a Vovó Morre Duas Vezes", 1, new DateTime(1994, 11, 10) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele em que o Underdog Escapa", 1, new DateTime(1994, 11, 17) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele do Macaco", 1, new DateTime(1994, 12, 15) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele com a Sra. Bing", 1, new DateTime(1995, 01, 05) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele com uma Dúzia de Lasanhas", 1, new DateTime(1995, 01, 12) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele dos Seios", 1, new DateTime(1995, 01, 19) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele dos Corações Doces", 1, new DateTime(1995, 02, 09) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele do Cara Chapado", 1, new DateTime(1995, 02, 16) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele de Duas Partes: Parte 1", 1, new DateTime(1995, 02, 23) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele de Duas Partes: Parte 2", 1, new DateTime(1995, 02, 23) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele do Pôquer", 1, new DateTime(1995, 03, 02) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele em que o Macaco Escapa", 1, new DateTime(1995, 03, 09) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele do Ortodontista Maligno", 1, new DateTime(1995, 04, 06) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele da Monica Falsa", 1, new DateTime(1995, 04, 27) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele do Fator Repulsa", 1, new DateTime(1995, 05, 04) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele do Nascimento", 1, new DateTime(1995, 05, 11) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-          new object[] { "Aquele em que Rachel Descobre", 1, new DateTime(1995, 05, 18) });
-
-            //temporada 2
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-            new object[] { "Aquele com a Nova Namorada do Ross", 2, new DateTime(1995, 09, 21) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele do Leite Materno", 2, new DateTime(1995, 09, 28) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele em que Heckles Morre", 2, new DateTime(1995, 10, 05) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele com o Marido da Phoebe", 2, new DateTime(1995, 10, 12) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele com Cinco Bifes e uma Berinjela", 2, new DateTime(1995, 10, 19) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-          new object[] { "Aquele com o Bebê no Ônibus", 2, new DateTime(1995, 11, 02) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-          new object[] { "Aquele em que Ross Descobre", 2, new DateTime(1995, 11, 09) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele com a Lista", 2, new DateTime(1995, 11, 16) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-           new object[] { "Aquele com o Pai da Phoebe", 2, new DateTime(1995, 12, 14) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-          new object[] { "Aquele com o Russ", 2, new DateTime(1996, 01, 04) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-         new object[] { "Aquele com o Casamento Lésbico", 2, new DateTime(1996, 01, 18) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-         new object[] { "Aquele Depois do Superbowl", 2, new DateTime(1996, 01, 28) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-         new object[] { "Aquele com o Vídeo de Formatura", 2, new DateTime(1996, 02, 01) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-         new object[] { "Aquele em que Ross e Rachel... Você Sabe", 2, new DateTime(1996, 02, 08) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-         new object[] { "Aquele em que Joey Sai", 2, new DateTime(1996, 02, 15) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-         new object[] { "Aquele em que Eddie Entra", 2, new DateTime(1996, 02, 22) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-       new object[] { "Aquele em que o Dr. Ramoray Morre", 2, new DateTime(1996, 03, 21) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-          new object[] { "Aquele em que Eddie Não Vai Embora", 2, new DateTime(1996, 03, 28) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-               new object[] { "Aquele em que o Velho Yeller Morre", 2, new DateTime(1996, 04, 04) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele com os Valentões", 2, new DateTime(1996, 04, 25) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-            new object[] { "Aquele com as Duas Festas", 2, new DateTime(1996, 05, 02) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-                new object[] { "Aquele com a Catapora", 2, new DateTime(1996, 05, 09) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-              new object[] { "Aquele com o Casamento de Barry e Mindy", 2, new DateTime(1996, 05, 16) });
-
-            //temporada 3
+           new object[] { "Aquele do Rugby", 4, new DateTime(1998, 02, 26) });
 
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele da Fantasia da Princesa Leia", 3, new DateTime(1996, 09, 19) });
+           new object[] { "Aquele da Festa Falsa", 4, new DateTime(1998, 03, 19) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele em que Ninguém Está Pronto", 3, new DateTime(1996, 09, 26) });
+           new object[] { "Aquele com a Pornografia de Graça", 4, new DateTime(1998, 03, 26) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele com a Geleia", 3, new DateTime(1996, 10, 03) });
+           new object[] { "Aquele do Vestido Novo da Rachel", 4, new DateTime(1998, 04, 02) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele do Túnel Metafórico", 3, new DateTime(1996, 10, 10) });
+           new object[] { "Aquele da Pressa", 4, new DateTime(1998, 04, 09) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele do Frank Jr.", 3, new DateTime(1996, 10, 17) });
+           new object[] { "Aquele com Todos os Vestidos de Noiva", 4, new DateTime(1998, 04, 16) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele do Flashback", 3, new DateTime(1996, 10, 31) });
-
+          new object[] { "Aquele do Convite", 4, new DateTime(1998, 04, 23) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-            new object[] { "Aquele com a Cama de Carro de Corrida", 3, new DateTime(1996, 11, 07) });
+          new object[] { "Aquele do Pior Padrinho de Todos os Tempos", 4, new DateTime(1998, 04, 30) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele com o Instrumento para Cutucar", 3, new DateTime(1996, 11, 14) });
+          new object[] { "Aquele do Casamento do Ross Parte 1", 4, new DateTime(1998, 05, 07) });
             migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele do Futebol Americano", 3, new DateTime(1996, 11, 21) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele em que Rachel Pede as Contas", 3, new DateTime(1996, 12, 12) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele em que Chandler Não Lembra Qual Irmã", 3, new DateTime(1997, 01, 09) });
-
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele com Todo o Ciúme", 3, new DateTime(1997, 01, 16) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele em que Monica e Richard são Amigos", 3, new DateTime(1997, 01, 30) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele com a ex-Parceira de Phoebe", 3, new DateTime(1997, 02, 06) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele em que Ross e Rachel dão um Tempo", 3, new DateTime(1997, 02, 13) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele da Manhã Seguinte", 3, new DateTime(1997, 02, 20) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele sem a Viagem Para Esquiar", 3, new DateTime(1997, 03, 06) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele com a Fita de Hipnose", 3, new DateTime(1997, 03, 13) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele da Camiseta Minúscula", 3, new DateTime(1997, 03, 27) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele da Casa de Bonecas", 3, new DateTime(1997, 04, 03) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele com o Pintinho e o Pato", 3, new DateTime(1997, 04, 17) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele do Grito", 3, new DateTime(1997, 04, 24) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele da Coisa de Ross", 3, new DateTime(1997, 05, 01) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele com o Campeão de Vale Tudo", 3, new DateTime(1997, 05, 08) });
-            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
-             new object[] { "Aquele na Praia", 3, new DateTime(1997, 05, 15) });
+          new object[] { "Aquele do Casamento do Ross Parte 2", 4, new DateTime(1998, 05, 07) });
 
 
+            //temporada 5
+
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+         new object[] { "Aquele Depois de Ross Dizer Rachel", 5, new DateTime(1998, 09, 24) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+        new object[] { "Aquele com Todos os Beijos", 5, new DateTime(1998, 10, 01) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+        new object[] { "Aquele do Centésimo", 5, new DateTime(1998, 10, 08) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+        new object[] { "Aquele em que Phoebe Odeia a PBS", 5, new DateTime(1998, 10, 15) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+        new object[] { "Aquele com o Kips", 5, new DateTime(1998, 10, 29) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+        new object[] { "Aquele com o Pé Grande", 5, new DateTime(1998, 11, 05) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+        new object[] { "Aquele em que Ross se Muda", 5, new DateTime(1998, 11, 12) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+        new object[] { "Aquele com Todos os Dias de Ação de Graças", 5, new DateTime(1998, 11, 19) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+        new object[] { "Aquele do Sanduíche do Ross", 5, new DateTime(1998, 12, 10) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+       new object[] { "Aquele com a Irmã Inapropriada", 5, new DateTime(1998, 12, 17) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+      new object[] { "Aquele com Todas as Resoluções", 5, new DateTime(1999, 01, 07) });
+
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+      new object[] { "Aquele com a Risada de Trabalho de Chandler", 5, new DateTime(1999, 01, 21) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+      new object[] { "Aquele com a Bolsa do Joey", 5, new DateTime(1999, 02, 04) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+      new object[] { "Aquele em que Todos Descobrem", 5, new DateTime(1999, 02, 11) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+      new object[] { "Aquele com a Garota que Bate no Joey", 5, new DateTime(1999, 02, 18) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+      new object[] { "Aquele com o Policial", 5, new DateTime(1999, 02, 25) });
+
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+     new object[] { "Aquele com o Beijo Acidental de Rachel", 5, new DateTime(1999, 03, 18) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+     new object[] { "Aquele em que Rachel Fuma", 5, new DateTime(1999, 04, 08) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+     new object[] { "Aquele em que Ross Não Consegue Flertar", 5, new DateTime(1999, 04, 22) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+     new object[] { "Aquele do Passeio", 5, new DateTime(1999, 04, 29) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+                new object[] { "Aquele com a Bola", 5, new DateTime(1999, 05, 06) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele com a Grande Chance de Joey", 5, new DateTime(1999, 05, 13) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele em Vegas Parte 1", 5, new DateTime(1999, 05, 20) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele em Vegas Parte 3", 5, new DateTime(1999, 05, 20) });
+
+
+            //temporada 6
+
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele Depois de Vegas", 6, new DateTime(1999, 09, 23) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele em que Ross Abraça Rachel", 6, new DateTime(1999, 09, 30) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele da Negação de Ross", 6, new DateTime(1999, 10, 07) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele em que Joey Perde Seu Convênio", 6, new DateTime(1999, 10, 14) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele do Porsche de Joey", 6, new DateTime(1999, 10, 21) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele da Última Noite", 6, new DateTime(1999, 11, 04) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele Onde Phoebe Corre", 6, new DateTime(1999, 11, 11) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele com os Dentes do Ross", 6, new DateTime(1999, 11, 18) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele em que Ross Fica Doidão", 6, new DateTime(1999, 11, 25) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele da Rotina", 6, new DateTime(1999, 12, 16) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele com a Mesa do Boticário", 6, new DateTime(2000, 01, 06) });
+
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele da Piada", 6, new DateTime(2000, 01, 13) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele com a Irmã de Rachel", 6, new DateTime(2000, 02, 03) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele em que Chandler Não Consegue Chora", 6, new DateTime(2000, 02, 10) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele que Poderia Ter Sido", 6, new DateTime(2000, 02, 17) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele do Unagi", 6, new DateTime(2000, 02, 24) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele em que Ross Namora Uma Aluna", 6, new DateTime(2000, 03, 09) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele com o Refrigerador de Joey", 6, new DateTime(2000, 03, 23) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+            new object[] { "Aquele com 'Mac and C.H.E.E.S.E.", 6, new DateTime(2000, 04, 13) });
+
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+           new object[] { "Aquele em que Ross Conhece o Pai de Elizabeth", 6, new DateTime(2000, 04, 27) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+           new object[] { "Aquele em que Paul é o Cara", 6, new DateTime(2000, 05, 04) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+           new object[] { "Aquele com o Anel", 6, new DateTime(2000, 05, 11) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+           new object[] { "Aquele da Proposta de Casamento Parte 1", 6, new DateTime(2000, 05, 18) });
+            migrationBuilder.InsertData("Episodios", new string[] { "Nome", "Numero", "QuandoFoiLancado" },
+           new object[] { "Aquele da Proposta de Casamento Parte 2", 6, new DateTime(2000, 05, 18) });
 
 
 
