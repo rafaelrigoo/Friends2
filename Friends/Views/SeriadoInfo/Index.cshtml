@@ -1,7 +1,6 @@
 ﻿@model SeriadoInfo
 
-
-<figure>
+ <figure>
     <img class="titulo-seriadoinfoview" src="~/imagens/tituloparaview.jpg" />
 </figure>
  <table class=" table">
@@ -12,7 +11,7 @@
              <td>
                  @foreach(var elenco in Model.Elenco)
                     {
-                        <a asp-controller="ElencoeProducao" asp-action="FichaCompleta" asp-route-personagem="@elenco.Personagem">@elenco.NomeReal</a>
+                        <a asp-controller="Elenco" asp-action="FichaCompleta" asp-route-personagem="@elenco.Personagem">@elenco.NomeReal</a>
                         <br/>
                     }
              </td>
@@ -26,7 +25,7 @@
              <td>
                  @foreach (var producao in Model.Criadores)
                  {
-                     <a asp-controller = "ElencoeProducao" asp-action = "FichaCompleta" asp-route-nomeReal = "@producao.NomeReal" > @producao.NomeReal</a>
+                     <a asp-controller = "CriadoPor" asp-action = "FichaCompleta" asp-route-nomeReal = "@producao.NomeReal" > @producao.NomeReal</a>
                      <br/>
                  }
 
