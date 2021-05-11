@@ -15,10 +15,6 @@
     text-align:left;
 }
 
-.temporada-capa{
-   
-}
-
 .titulo-seriadoinfoview{
     width: 940px;
     object-fit: cover;
@@ -39,8 +35,26 @@
     
   }
 
-.imagem-dimensoes{
+.imagem-dimensoes {
     max-width: 300px;
     max-height: 350px;
+    
+}
 
+.temporada-logo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+}
+
+.alterando-paraflex{
+    display:flex;
+}
+
+.imagem-infopessoal{
+    margin: 25px;
+}
+
+.titulo-carreira{
+    margin-left: 600px;
 }

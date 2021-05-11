@@ -3,15 +3,21 @@
 <table class="temporada-capa">
 
     <tbody>
-        <tr>
-            @foreach (var temp in Model)
+        <tr class="temporada-logo">
+            @for (var i = 0; i < 9; i++)
             {
-                <th class="temporada-capa">
-                    <a asp-action="Episodios" asp-route-numeroTemporada="@temp.Numero"><img src="@temp.CaminhoImagem" /></a>
+                var elemento = Model.ElementAt(i);
+                <th>
+                    <a asp-action="Episodios" asp-route-numeroTemporada="@elemento.Numero"><img src="@elemento.CaminhoImagem" /></a>
                 </th>
             }
-        </tr>
 
+        </tr>
+        <tr>
+            @{var elemento2 = Model.ElementAt(9);
+            <th> <a asp-action="Episodios" asp-route-numeroTemporada="@elemento2.Numero"><img src="@elemento2.CaminhoImagem" /></a></th>
+                }
+        </tr>
     </tbody>
 
 
