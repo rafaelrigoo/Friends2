@@ -8,19 +8,18 @@
         <tr>
             <th>Nome</th>
             <th>Quando Lançou</th>
+            <th>Episodio mais Visto</th>
+            
         </tr>
     </thead>
     <tbody>
         @foreach (var ep in Model)
         {
         <tr>
-            <td>
-                <a asp-controller="Temporadas" asp-action="InformacoesEpisodio" >
-                    @ep.Nome 
-                </a>
-            </td>
+            <td>@ep.Nome  </td>
             <td>@ep.QuandoFoiLancado.ToString("dd/MM/yyyy")</td>
-           
+            
+            
         </tr>
         }
     </tbody>

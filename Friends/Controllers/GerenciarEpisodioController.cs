@@ -22,7 +22,8 @@ namespace Friends.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var episodios = applicationContext.Episodios;
+            return View(episodios);
         }
 
         [HttpGet]
