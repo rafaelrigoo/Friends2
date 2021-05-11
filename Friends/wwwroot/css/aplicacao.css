@@ -36,4 +36,11 @@
 
 .card-dimensao{
     max-width: 18rem;
+    
   }
+
+.imagem-dimensoes{
+    max-width: 300px;
+    max-height: 350px;
+
+}
