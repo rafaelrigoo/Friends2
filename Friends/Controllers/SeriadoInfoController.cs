@@ -22,5 +22,23 @@ namespace Friends.Controllers
             var seriadoInfo = applicationContext.Informacoes.Include(s => s.Elenco).Include(s => s.Criadores).First();
             return View(seriadoInfo);
         }
+
+        //pq quando deixo assim como argumento da erro e se eu colocar string funciona?
+        public IActionResult InfoPessoal(string nome)
+        {
+            var artista = applicationContext.Elenco 
+                .First(a => a.NomeReal == nome);
+            return View(artista);
+        }
+
+        public IActionResult InfoSerie()
+        {
+            return View();
+        }
+
+        public IActionResult Resumo()
+        {
+            return View();
+        }
     }
 }

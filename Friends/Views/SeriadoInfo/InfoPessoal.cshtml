@@ -1,0 +1,24 @@
+﻿@model Elenco
+
+<h1>@Model.NomeReal</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data de Nascimento</th>
+            <th>Pais de Origem</th>
+            <th>Quantidade de Filhos</th>
+            <th>Estado Civil</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Model.DatadeNascimento.ToString("dd/MM/yyyy")</td>
+            <td>@Model.Nacionalidade</td>
+            <td>@Model.QuantidadedeFilhos</td>
+            <td>@Model.EstadoCivil</td>
+        </tr>
+
+    </tbody>
+
+</table>

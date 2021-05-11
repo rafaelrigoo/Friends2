@@ -1,47 +1,59 @@
 ﻿@model SeriadoInfo
 
- <figure>
+<figure>
     <img class="titulo-seriadoinfoview" src="~/imagens/tituloparaview.jpg" />
 </figure>
- <table class=" table">
-      
-     <tbody>
-         <tr>
-             <th>Elenco Principal</th>
-             <td>
-                 @foreach(var elenco in Model.Elenco)
-                    {
-                        <a asp-controller="Elenco" asp-action="FichaCompleta" asp-route-personagem="@elenco.Personagem">@elenco.NomeReal</a>
-                        <br/>
-                    }
-             </td>
-         </tr>
-         <tr>
-             <th>Gênero</th>
-             <td>@Model.Genero</td>
-         </tr>
-         <tr>
-             <th>Criadores</th>
-             <td>
-                 @foreach (var producao in Model.Criadores)
-                 {
-                     <a asp-controller = "CriadoPor" asp-action = "FichaCompleta" asp-route-nomeReal = "@producao.NomeReal" > @producao.NomeReal</a>
-                     <br/>
-                 }
+<table class=" table">
 
-             </td>
-         </tr>
-         <tr>
-             <th>Numero de Temporadas</th>
-             <td>@Model.TotaldeTemporadas</td>
-         </tr>
-         <tr>
-             <th>Numero de Episódios</th>
-             <td>
-                 <a asp-controller="Temporadas" asp-action="Index">@Model.TotaldeEpisodios (Lista de Episódios por Temporada)</a>
-             </td>
-         </tr>
+    <tbody>
+        <tr>
+            <th>Elenco Principal</th>
+            <td>
+                @foreach (var elenco in Model.Elenco)
+                {
+                    <a asp-action="InfoPessoal" asp-route-nome="@elenco.NomeReal">@elenco.NomeReal</a>
+                    <br />
+                }
+            </td>
+        </tr>
+        <tr>
+            <th>Gênero</th>
+            <td>@Model.Genero</td>
+        </tr>
+        <tr>
+            <th>Criadores</th>
+            <td>
+                @foreach (var producao in Model.Criadores)
+                {
+                    <a asp-action="InfoPessoal" asp-route-nome="@producao.NomeReal"> @producao.NomeReal</a>
+                    <br />
+                }
 
-     </tbody>
+            </td>
+        </tr>
+        <tr>
+            <th>Numero de Temporadas</th>
+            <td>@Model.TotaldeTemporadas</td>
+        </tr>
+        <tr>
+            <th>Numero de Episódios</th>
+            <td>
+                <a asp-controller="Temporadas" asp-action="Index">@Model.TotaldeEpisodios (Lista de Episódios por Temporada)</a>
+            </td>
+        </tr>
+        <tr>
+            <th>Resumo da Série</th>
+            <td>
+                <button asp-action="Resumo">Saiba Mais</button>
+            </td>
+        </tr>
+        <tr>
+            <th>Informações Sobre o Seriado</th>
+            <td>
+                <button asp-action="">Saiba Mais</button>
+            </td>
+        </tr>
 
- </table>
+    </tbody>
+
+</table>

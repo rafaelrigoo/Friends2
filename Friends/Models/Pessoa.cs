@@ -16,5 +16,7 @@ namespace Friends.Models
         public string EstadoCivil { get; set; }
         public int QuantidadedeFilhos { get; set; }
         public string CaminhoImagem { get; set; }
+        public string Biografia { get; set; }
+        public string Carreira { get; set; }
     }
 }

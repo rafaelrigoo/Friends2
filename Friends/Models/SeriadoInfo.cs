@@ -27,6 +27,7 @@ namespace Friends.Models
         public DateTime QuandoTerminou { get; set; }
         public IList<Curiosidade> Curiosidade { get; set; }
         public IList<Critica> Critica { get; set; }
+        public string InfoSerie { get; set; }
 
     }
 }
