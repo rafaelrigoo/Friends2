@@ -33,12 +33,14 @@ namespace Friends.Controllers
 
         public IActionResult InfoSerie()
         {
-            return View();
+            var infoSerie = applicationContext.Informacoes.First();
+            return View(infoSerie);
         }
 
         public IActionResult Resumo()
         {
-            return View();
+            var resumo = applicationContext.Informacoes.First();
+            return View(resumo);
         }
     }
 }
