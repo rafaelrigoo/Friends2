@@ -4,14 +4,16 @@ using Friends.Dados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Friends.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20210511091852_seed-seriadoinfo-novascolunas")]
+    partial class seedseriadoinfonovascolunas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,6 +51,9 @@ namespace Friends.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Biografia")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CaminhoImagem")
                         .HasColumnType("nvarchar(max)");
 
@@ -70,9 +75,6 @@ namespace Friends.Migrations
 
                     b.Property<int>("QuantidadedeFilhos")
                         .HasColumnType("int");
-
-                    b.Property<string>("ResumoPersonagem")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SeriadoInfoId")
                         .HasColumnType("int");
@@ -165,6 +167,9 @@ namespace Friends.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Biografia")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CaminhoImagem")
                         .HasColumnType("nvarchar(max)");
 
@@ -194,9 +199,6 @@ namespace Friends.Migrations
 
                     b.Property<int>("QuantidadedeFilhos")
                         .HasColumnType("int");
-
-                    b.Property<string>("ResumoPersonagem")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SeriadoInfoId")
                         .HasColumnType("int");
