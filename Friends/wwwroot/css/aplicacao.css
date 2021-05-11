@@ -58,3 +58,7 @@
 .titulo-carreira{
     margin-left: 600px;
 }
+
+.espaco-entre-cards{
+    justify-content: space-around;
+}
