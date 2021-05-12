@@ -1,6 +1,7 @@
 ﻿using Friends.Dados;
 using Friends.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,8 +44,11 @@ namespace Friends.Controllers
 
         public IActionResult Editar(Temporada temporada)
         {
-            
-            return View();
+            var temp = applicationContext.Temporadas
+                .Where(t => t.Numero == temporada.Numero);
+                
+
+            return View(temp);
         }
     }
 }

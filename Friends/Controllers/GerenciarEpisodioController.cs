@@ -2,6 +2,7 @@
 using Friends.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -22,7 +23,17 @@ namespace Friends.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var episodios = applicationContext.Episodios;
+            var episodios = applicationContext.Temporadas;
+            return View(episodios);
+        }
+
+
+        public IActionResult IndexForm(Temporada temporada)
+        {
+            var episodios = applicationContext.Temporadas
+                .Include(ep => ep.Episodios)
+                .Where(ep => ep.Numero == temporada.Numero);
+                
             return View(episodios);
         }
 
@@ -45,7 +56,11 @@ namespace Friends.Controllers
 
         public IActionResult ExcluirEpisodio(Episodio episodio)
         {
-            applicationContext.Episodios.Remove(episodio);
+            var ep = applicationContext.Episodios
+                .Include(e => e.Nome == episodio.Nome);
+
+            applicationContext.Remove(ep);
+
             applicationContext.SaveChanges();
 
             return View();
