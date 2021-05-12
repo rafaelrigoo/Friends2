@@ -19,7 +19,7 @@
                     <td>@temp.QuandoTerminou.ToString("dd/MM/yyyy")</td>
                     <td></td>
                     <td>
-                        <a class="btn btn-secondary" asp-action="Editar">Editar</a>
+                        <a asp-controller="GerenciarTemporada" asp-action="Editar" asp-route-Numero="@temp.Numero" class="btn btn-secondary">Editar</a>
                     </td>
                 </tr>
             }

@@ -1,1 +1,27 @@
-﻿
+﻿@model IEnumerable<Temporada>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Temporada</th>
+            <th>Quando foi ao Ar</th>
+            <th>Quando Terminou</th>
+            <th>Episodio Mais visto</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var temp in Model)
+        {
+            <tr>
+                <td>@temp.Numero</td>
+                <td>@temp.QuandoFoiLancada.ToString("dd//MM/yyyy")</td>
+                <td>@temp.QuandoTerminou.ToString("dd/MM/yyyy")</td>
+                <td></td>
+                <td>
+                    <a asp-controller="GerenciarTemporada" asp-action="Salvar" class="btn btn-secondary">Salvar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

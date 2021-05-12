@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Temporada>
+
+<a class="btn btn-primary" asp-action="Episodio">Novo Episódio</a>
+
+@foreach (var temp in Model)
+{
+    <h2>Temporada @temp.Numero (@temp.QuandoFoiLancada.ToString("dd/MM/yyyy") - @temp.QuandoTerminou.ToString("dd/MM/yyyy"))</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nº do Episódio(No Geral)</th>
+                <th>Temporada</th>
+                <th>Nome</th>
+                <th>Quando foi ao Ar</th>
+                <th>Operações</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var ep in temp.Episodios)
+            {
+                <tr>
+                    <td>  !!!!!! </td>
+                    <td>@temp.Numero</td>
+                    <td>@ep.Nome</td>
+                    <td>@ep.QuandoFoiLancado.ToString("dd/MM/yyyy")</td>
+
+
+
+                    <td>
+                        <a class="btn btn-secondary" asp-action="EditarEpisodio" asp-route-Nome="@ep.Nome">Editar</a>
+                        <a class="btn btn-danger" asp-action="ExcluirEpisodio" asp-route-Nome="@ep.Nome">Excluir</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
