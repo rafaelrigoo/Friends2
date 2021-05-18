@@ -1,0 +1,50 @@
+﻿@model Episodio
+
+<form class="form-row" asp-action="EditarEpisodio">
+
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="Temporada.Numero" />
+
+    <div class="form-group col-6">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" readonly />
+    </div>
+
+    <div class="form-group col-6">
+        <label asp-for="QuandoFoiLancado"></label>
+        <input asp-for="QuandoFoiLancado" class="form-control" readonly />
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Adicionar Participação Especial</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Novo Artista</a>
+                @foreach(var artista in Model.ParticipacaoEspecial)
+                {
+                    <a class="dropdown-item" href="@artista.NomeReal">@artista.NomeReal</a>
+                }
+                
+            </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+    </div>
+
+    <div class="form-group col-12">
+        <label asp-for="ErrosdeGravacao"></label>
+        <textarea asp-for="ErrosdeGravacao" class="form-control">
+        </textarea>
+        <span asp-validation-for="ErrosdeGravacao"></span>
+    </div>
+
+    <div class="form-group col-12">
+        <label asp-for="Sinopse"></label>
+        <textarea asp-for="Sinopse" class="form-control">
+        </textarea>
+        <span asp-validation-for="Sinopse"></span>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary">Gravar</button>
+    </div>
+</form>

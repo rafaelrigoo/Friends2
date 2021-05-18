@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Elenco>
 
-    <a class="btn btn-primary" asp-action="Elenco">Novo Artista</a>
+    <a class="btn btn-primary" asp-controller="GerenciarElenco" asp-action="EditarElenco">Novo Artista</a>
 
 <table class="table table-striped">
     <thead>
@@ -20,13 +20,13 @@
             <tr>
                 <td>@artista.Personagem</td>
                 <td>@artista.NomeReal</td>
-                <td>@artista.DatadeNascimento</td>
+                <td>@artista.DatadeNascimento.ToString("dd/MM/yyyy")</td>
                 <td>@artista.Nacionalidade</td>
                 <td>@artista.EstadoCivil</td>
                 <td>@artista.QuantidadedeFilhos</td>
                 <td>
-                    <button class="btn btn-secondary" asp-action="EditarEpisodio">Editar</button>
-                    <button class="btn btn-danger" asp-action="Excluir">Excluir</button>
+                    <a class="btn btn-secondary" asp-controller="GerenciarElenco" asp-action="EditarElenco" asp-route-Personagem="@artista.Personagem">Editar</a>
+                    <a class="btn btn-danger" asp-controller="GerenciarElenco" asp-action="ExcluirElenco" asp-route-Personagem="@artista.Personagem">Excluir</a>
                 </td>
             </tr>
         }

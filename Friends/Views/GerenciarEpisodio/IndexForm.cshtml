@@ -2,6 +2,13 @@
 
 <a class="btn btn-primary" asp-action="Episodio">Novo Episódio</a>
 
+@if(TempData["Mensagem"] != null)
+{
+    <div class="alert alert-warning">
+        @TempData["Mensagem"]
+    </div>        
+}
+
 @foreach (var temp in Model)
 {
     <h2>Temporada @temp.Numero (@temp.QuandoFoiLancada.ToString("dd/MM/yyyy") - @temp.QuandoTerminou.ToString("dd/MM/yyyy"))</h2>
@@ -29,8 +36,8 @@
 
 
                     <td>
-                        <a class="btn btn-secondary" asp-action="EditarEpisodio" asp-route-Nome="@ep.Nome">Editar</a>
-                        <a class="btn btn-danger" asp-action="ExcluirEpisodio" asp-route-Nome="@ep.Nome">Excluir</a>
+                        <a class="btn btn-secondary" asp-action="EditarEpisodio" asp-route-Id="@ep.Id" asp-route-numTemporada="@temp.Numero">Editar</a>
+                        <a class="btn btn-danger" asp-action="ExcluirEpisodio" asp-route-Id="@ep.Id">Excluir</a>
                     </td>
                 </tr>
             }
