@@ -32,23 +32,38 @@ namespace Friends.Controllers
         {
             var episodios = applicationContext.Temporadas
                 .Include(ep => ep.Episodios)
+                .ThenInclude(a => a.ParticipacaoEspecial)
                 .Where(ep => ep.Numero == temporada.Numero);
                 
             return View(episodios);
         }
 
         [HttpGet]
-        public IActionResult Episodio()  // formulário para preencher os dados de episódio
+        public IActionResult EditarEpisodio(int id, byte numTemporada)  // formulário para preencher os dados de episódio
         {
-            return View();
+            var ep = applicationContext.Episodios
+                .Include(t => t.Temporada)
+                .FirstOrDefault(e => e.Id == id);
+
+            if (ep != null)
+            {
+                ep.Temporada = new Temporada { Numero = numTemporada };
+                return View(ep);
+            }
+            TempData["Mensagem"] = $"Episódio com id {id} não existe!";
+            return RedirectToAction("IndexForm", new { Numero = numTemporada }); //30x location: nova url
         }
 
         [HttpPost]
-        public IActionResult Episodio(Episodio episodio) // recebe os dados de um episódio enviados pelo formulário, e salva no banco
+        public IActionResult EditarEpisodio(Episodio episodio) // recebe os dados de um episódio enviados pelo formulário, e salva no banco
         {
+            // TODO: criar view model de edição de episódio com numero da temporada como propriedade
             if (ModelState.IsValid)
             {
-                return Json(episodio);
+                applicationContext.Episodios.Update(episodio);
+                applicationContext.SaveChanges(); // UPDATE Episodios SET WHERE Id = ?
+
+                return RedirectToAction("IndexForm", new { episodio.Temporada.Numero });
             }
 
             return View(episodio);
@@ -57,13 +72,16 @@ namespace Friends.Controllers
         public IActionResult ExcluirEpisodio(Episodio episodio)
         {
             var ep = applicationContext.Episodios
-                .Include(e => e.Nome == episodio.Nome);
+                .Include(t => t.Temporada)
+                .FirstOrDefault(e => e.Id == episodio.Id);
 
-            applicationContext.Remove(ep);
+            if(ep != null)
+            {
+                applicationContext.Remove(ep);
+                applicationContext.SaveChanges();
+            }
 
-            applicationContext.SaveChanges();
-
-            return View();
+            return RedirectToAction("IndexForm", new { ep.Temporada.Numero});
         }
 
 

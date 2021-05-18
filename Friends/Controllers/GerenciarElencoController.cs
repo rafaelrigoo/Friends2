@@ -1,4 +1,5 @@
-﻿using Friends.Models;
+﻿using Friends.Dados;
+using Friends.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,45 +10,52 @@ namespace Friends.Controllers
 {
     public class GerenciarElencoController : Controller
     {
+        private readonly ApplicationContext applicationContext;
+
+        public GerenciarElencoController(ApplicationContext applicationContext)
+        {
+            this.applicationContext = applicationContext;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
-            var joey = new Elenco();
-            joey.Personagem = "Joey";
-            joey.NomeReal = "Matthew Steven LeBlanc";
-            joey.DatadeNascimento = new DateTime(1967, 07, 25);
-            joey.Nacionalidade = "Estados Unidos";
-            joey.CaminhoImagem = "/imagens/joey.jpeg";
-
-            var ross = new Elenco();
-            ross.Personagem = "Ross";
-            ross.NomeReal = "Ross";
-            ross.CaminhoImagem = "/imagens/ross.jpg";
-
-            var david = new Elenco();
-            david.NomeReal = "David Crane";
-
-
-            var joeylista = new List<Elenco>() { joey, ross, david };
-
-            return View(joeylista);
+            var elenco = applicationContext.Elenco;
+            return View(elenco);
         }
 
         [HttpGet]
-        public IActionResult Elenco()
+        public IActionResult EditarElenco(string personagem)
         {
-            return View();
+            var artista = applicationContext.Elenco
+                .FirstOrDefault(a => a.Personagem == personagem);
+
+            return View(artista);
         }
 
         [HttpPost]
-        public IActionResult Elenco(Elenco elenco)
+        public IActionResult EditarElenco(Elenco elenco)
         {
             if (ModelState.IsValid)
             {
-                return Json(elenco);
+                applicationContext.Elenco.Add(elenco);
+                applicationContext.SaveChanges();
             }
 
-            return View(elenco);
+            return View();
+        }
+
+        public IActionResult ExcluirElenco(Elenco elenco)
+        {
+            var artista = applicationContext.Elenco
+                .FirstOrDefault(a => a.Personagem == elenco.Personagem);
+
+            if(artista != null)
+            {
+                applicationContext.Remove(artista);
+                applicationContext.SaveChanges();
+            }
+            return RedirectToAction("Index");
         }
     }
 }
