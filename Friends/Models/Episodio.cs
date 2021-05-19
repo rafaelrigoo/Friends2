@@ -25,6 +25,7 @@ namespace Friends.Models
             Nome = nome;
             Temporada = temporada;
             ParticipacaoEspecial = new List<ParticipacaoEspecial>();
+          
         }
         public int Id { get; set; }
         
@@ -59,6 +60,7 @@ namespace Friends.Models
         /// <summary>
         /// Equipe que trabalhou neste episodio.
         /// </summary>
-      
+        /// 
+       
     }
 }

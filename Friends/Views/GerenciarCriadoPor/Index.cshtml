@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<CriadoPor>
 
-    <a class="btn btn-primary" asp-action="CriadoPor">Adicionar novo</a>
+    <a class="btn btn-primary" asp-controller="GerenciarCriadoPor" asp-action="EditarCriadoPor">Adicionar novo</a>
 
 
     <table class="table table-striped">
@@ -19,13 +19,13 @@
             {
                 <tr>
                     <td>@artista.NomeReal</td>
-                    <td>@artista.DatadeNascimento</td>
+                    <td>@artista.DatadeNascimento.ToString("dd/MM/yyyy")</td>
                     <td>@artista.Nacionalidade</td>
                     <td>@artista.EstadoCivil</td>
                     <td>@artista.QuantidadedeFilhos</td>
                     <td>
-                        <button class="btn btn-secondary" asp-action="EditarEpisodio">Editar</button>
-                        <button class="btn btn-danger" asp-action="Excluir">Excluir</button>
+                        <a class="btn btn-secondary" asp-controller="GerenciarCriadoPor" asp-action="EditarCriadoPor" asp-route-Id="@artista.Id">Editar</a>
+                        <a class="btn btn-danger" asp-action="Excluir">Excluir</a>
                     </td>
                 </tr>
             }

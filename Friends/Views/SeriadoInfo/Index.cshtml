@@ -11,7 +11,7 @@
             <td>
                 @foreach (var elenco in Model.Elenco)
                 {
-                    <a asp-action="InfoPessoal" asp-route-nome="@elenco.NomeReal">@elenco.NomeReal</a>
+                    <a asp-action="InfoPessoal" asp-route-Id="@elenco.Id">@elenco.NomeReal</a>
                     <br />
                 }
             </td>
@@ -25,7 +25,7 @@
             <td>
                 @foreach (var producao in Model.Criadores)
                 {
-                    <a asp-action="InfoPessoal" asp-route-nome="@producao.NomeReal"> @producao.NomeReal</a>
+                    <a asp-action="InfoPessoal" asp-route-Id="@producao.Id"> @producao.NomeReal</a>
                     <br />
                 }
 

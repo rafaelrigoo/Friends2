@@ -1,19 +1,13 @@
-﻿@model Elenco
+﻿@model CriadoPor
 
 
-<form asp-controller="GerenciarElenco" asp-action="EditarElenco">
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Personagem</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Personagem">
-        <span asp-validation-for="Personagem"></span>
-    </div>
+<form asp-controller="GerenciarCriadoPor" asp-action="EditarCriadoPor">
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Nome do Artista</label>
         <input type="text" class="form-control" id="formGroupExampleInput" asp-for="NomeReal">
         <span asp-validation-for="NomeReal"></span>
     </div>
-
-
+  
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Data de Nascimento</label>
         <input type="text" class="form-control" id="formGroupExampleInput" asp-for="DatadeNascimento">
@@ -26,12 +20,6 @@
 
     </div>
     <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Estado Civil</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="EstadoCivil">
-        <span asp-validation-for="EstadoCivil"></span>
-    </div>
-
-    <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Quantidade de Filhos</label>
         <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="QuantidadedeFilhos">
         <span asp-validation-for="QuantidadedeFilhos"></span>
@@ -40,6 +28,6 @@
 
     <div>
 
-        <button class="btn btn-primary">Gravar</button>
+        <button class="btn btn-primary" type="submit" asp-action="EditarCriadoPor">Adicionar</button>
     </div>
 </form>

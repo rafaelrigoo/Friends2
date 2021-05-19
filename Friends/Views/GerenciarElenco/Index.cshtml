@@ -2,6 +2,13 @@
 
     <a class="btn btn-primary" asp-controller="GerenciarElenco" asp-action="EditarElenco">Novo Artista</a>
 
+ @if(TempData["Msg"] != null)
+            {
+                <div class="alert alert-warning m-3" >
+                    @TempData["Msg"]
+                </div>
+            }
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -25,10 +32,13 @@
                 <td>@artista.EstadoCivil</td>
                 <td>@artista.QuantidadedeFilhos</td>
                 <td>
-                    <a class="btn btn-secondary" asp-controller="GerenciarElenco" asp-action="EditarElenco" asp-route-Personagem="@artista.Personagem">Editar</a>
-                    <a class="btn btn-danger" asp-controller="GerenciarElenco" asp-action="ExcluirElenco" asp-route-Personagem="@artista.Personagem">Excluir</a>
+                    <a class="btn btn-secondary" asp-controller="GerenciarElenco" asp-action="EditarElenco" asp-route-Id="@artista.Id">Editar</a>
+                    <a class="btn btn-danger" 
+                        href="javascript:func()" onclick="confirmacao(@artista.Id, '@artista.NomeReal')">Excluir
+                    </a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
