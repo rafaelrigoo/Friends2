@@ -25,10 +25,10 @@ namespace Friends.Controllers
         }
 
         [HttpGet]
-        public IActionResult EditarElenco(string personagem)
+        public IActionResult EditarElenco(int Id)
         {
             var artista = applicationContext.Elenco
-                .FirstOrDefault(a => a.Personagem == personagem);
+                .FirstOrDefault(a => a.Id == Id);
 
             return View(artista);
         }
@@ -36,25 +36,37 @@ namespace Friends.Controllers
         [HttpPost]
         public IActionResult EditarElenco(Elenco elenco)
         {
-            if (ModelState.IsValid)
+           if(ModelState.IsValid)
             {
-                applicationContext.Elenco.Add(elenco);
+                if(elenco.Id != 0)
+                  applicationContext.Elenco.Update(elenco); 
+                
+                else
+                 applicationContext.Elenco.Add(elenco);
+                
+
+
                 applicationContext.SaveChanges();
+                return RedirectToAction("Index");
             }
 
-            return View();
+            return View(elenco);
         }
 
-        public IActionResult ExcluirElenco(Elenco elenco)
+       
+        public IActionResult ExcluirElenco(int Id)
         {
             var artista = applicationContext.Elenco
-                .FirstOrDefault(a => a.Personagem == elenco.Personagem);
+                .FirstOrDefault(a => a.Id == Id);
 
             if(artista != null)
             {
                 applicationContext.Remove(artista);
                 applicationContext.SaveChanges();
             }
+
+            TempData["Msg"] = "Artista removido com sucesso";
+
             return RedirectToAction("Index");
         }
     }

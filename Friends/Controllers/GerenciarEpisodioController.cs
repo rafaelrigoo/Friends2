@@ -47,7 +47,7 @@ namespace Friends.Controllers
 
             if (ep != null)
             {
-                ep.Temporada = new Temporada { Numero = numTemporada };
+               // ep.Temporada = new Temporada { Numero = numTemporada };
                 return View(ep);
             }
             TempData["Mensagem"] = $"Episódio com id {id} não existe!";
@@ -60,6 +60,7 @@ namespace Friends.Controllers
             // TODO: criar view model de edição de episódio com numero da temporada como propriedade
             if (ModelState.IsValid)
             {
+                episodio.Temporada = applicationContext.Temporadas.First(t => t.Id == episodio.Temporada.Id);
                 applicationContext.Episodios.Update(episodio);
                 applicationContext.SaveChanges(); // UPDATE Episodios SET WHERE Id = ?
 
@@ -69,16 +70,17 @@ namespace Friends.Controllers
             return View(episodio);
         }
 
-        public IActionResult ExcluirEpisodio(Episodio episodio)
+        public IActionResult ExcluirEpisodio(int Id)
         {
             var ep = applicationContext.Episodios
                 .Include(t => t.Temporada)
-                .FirstOrDefault(e => e.Id == episodio.Id);
+                .FirstOrDefault(e => e.Id == Id);
 
             if(ep != null)
             {
                 applicationContext.Remove(ep);
                 applicationContext.SaveChanges();
+                TempData["Mensagem"] = "Episodio Excluido com Sucesso";
             }
 
             return RedirectToAction("IndexForm", new { ep.Temporada.Numero});

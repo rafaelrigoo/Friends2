@@ -24,10 +24,10 @@ namespace Friends.Controllers
         }
 
         //pq quando deixo assim como argumento da erro e se eu colocar string funciona?
-        public IActionResult InfoPessoal(string nome)
+        public IActionResult InfoPessoal(int id)
         {
             var artista = applicationContext.Elenco 
-                .First(a => a.NomeReal == nome);
+                .First(a => a.Id == id);
             return View(artista);
         }
 
