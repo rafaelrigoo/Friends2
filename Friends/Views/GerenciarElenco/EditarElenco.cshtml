@@ -1,45 +1,93 @@
-﻿@model Elenco
+﻿@model ElencoViewModel
 
 
-<form asp-controller="GerenciarElenco" asp-action="EditarElenco">
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Personagem</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Personagem">
-        <span asp-validation-for="Personagem"></span>
+<form class="form-row" asp-controller="GerenciarElenco" asp-action="EditarElenco" enctype="multipart/form-data">
+
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="ResumoPersonagem" />
+    <input type="hidden" asp-for="Carreira" />
+
+    <div class="col-6">
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Personagem</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Personagem">
+            <span asp-validation-for="Personagem"></span>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Nome do Artista</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" asp-for="NomeReal">
+            <span asp-validation-for="NomeReal"></span>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Data de Nascimento</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" asp-for="DatadeNascimento">
+            <span asp-validation-for="DatadeNascimento"></span>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Nacionalidade</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Nacionalidade">
+            <span asp-validation-for="Nacionalidade"></span>
+
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Estado Civil</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="EstadoCivil">
+            <span asp-validation-for="EstadoCivil"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Quantidade de Filhos</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="QuantidadedeFilhos">
+            <span asp-validation-for="QuantidadedeFilhos"></span>
+        </div>
+
     </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Nome do Artista</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" asp-for="NomeReal">
-        <span asp-validation-for="NomeReal"></span>
+
+
+
+
+    <div class="col-6">
+        <div class="form-group">
+            <img class="img-fluid" id="imgElenco" src="@Model.CaminhoImagem" />
+            <label class="btn btn-primary">
+                Alterar <input class="d-none" asp-for="ImagemElenco" type="file" accept="image/x-png,image/jpeg" />
+            </label>
+        </div><!-- /.form group -->
     </div>
 
-
-    <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Data de Nascimento</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" asp-for="DatadeNascimento">
-        <span asp-validation-for="DatadeNascimento"></span>
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Nacionalidade</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="Nacionalidade">
-        <span asp-validation-for="Nacionalidade"></span>
-
-    </div>
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Estado Civil</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="EstadoCivil">
-        <span asp-validation-for="EstadoCivil"></span>
-    </div>
-
-    <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Quantidade de Filhos</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="QuantidadedeFilhos">
-        <span asp-validation-for="QuantidadedeFilhos"></span>
-    </div>
-
-
-    <div>
+    <div class="col-12">
 
         <button class="btn btn-primary">Gravar</button>
     </div>
 </form>
+
+@section Scripts {
+    <script>
+        // javascript!
+
+        $(function () { // closure jQuery
+
+            $('#ImagemElenco').change(function () {
+                var input = this;
+                var url = $(this).val();
+                var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+                if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg")) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#imgElenco').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+                //else {
+                //    $('#imgPerfil').attr('src', '~/Content/img/avatar3.png');
+                //}
+            });
+
+        });
+
+
+    </script>
+}

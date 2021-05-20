@@ -34,6 +34,9 @@ namespace Friends.Controllers
                 .Include(ep => ep.Episodios)
                 .ThenInclude(a => a.ParticipacaoEspecial)
                 .Where(ep => ep.Numero == temporada.Numero);
+
+            // IFormFile
+                
                 
             return View(episodios);
         }

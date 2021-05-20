@@ -33,10 +33,11 @@ namespace Friends.Controllers
         public IActionResult Episodios(byte numeroTemporada)
         {
             ViewData["NumeroTemporada"] = numeroTemporada;
-           
+
             var episodio = _context.Episodios
                 .Include(t => t.Temporada)
-                .Where(e => e.Temporada.Numero == numeroTemporada);
+                .Where(e => e.Temporada.Numero == numeroTemporada)
+                .OrderBy(d => d.QuandoFoiLancado);
 
             return View(episodio);
         }
