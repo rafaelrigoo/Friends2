@@ -16,7 +16,8 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Nº do Episódio(No Geral)</th>
+                <th class="formatando-coluna-tabela">Nº do Episódio(no Geral)</th>
+                <th class="formatando-coluna-tabela">Nº do Episódio(na Temporada)</th>
                 <th>Temporada</th>
                 <th>Nome</th>
                 <th>Quando foi ao Ar</th>
@@ -25,9 +26,10 @@
         </thead>
         <tbody>
 
-            @foreach (var ep in temp.Episodios)
+            @foreach (var ep in temp.Episodios.OrderBy(d => d.QuandoFoiLancado))
             {
                 <tr>
+                    <td></td>
                     <td>  !!!!!! </td>
                     <td>@temp.Numero</td>
                     <td>@ep.Nome</td>

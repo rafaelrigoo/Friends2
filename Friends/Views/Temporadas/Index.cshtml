@@ -2,7 +2,7 @@
 
 <table class="temporada-capa">
 
-    <tbody>
+    <tbody class="alterando-paraflex">
         <tr class="temporada-logo">
             @for (var i = 0; i < 9; i++)
             {
@@ -13,7 +13,7 @@
             }
 
         </tr>
-        <tr>
+        <tr class="alterando-paraflex alinhando-ao-centro">
             @{var elemento2 = Model.ElementAt(9);
             <th> <a asp-action="Episodios" asp-route-numeroTemporada="@elemento2.Numero"><img src="@elemento2.CaminhoImagem" /></a></th>
                 }

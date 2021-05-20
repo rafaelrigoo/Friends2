@@ -41,10 +41,11 @@
     
 }
 
-.temporada-logo{
+.temporada-logo {
     display: flex;
     flex-wrap: wrap;
     width: 600px;
+    justify-content: space-evenly;
 }
 
 .alterando-paraflex{
@@ -61,4 +62,16 @@
 
 .espaco-entre-cards{
     justify-content: space-around;
+}
+
+.alinhando-ao-centro{
+    align-self: center;
+}
+
+.formatando-coluna-tabela{
+    width: 100px;
+}
+
+.padding{
+    padding-left: 25px;
 }
