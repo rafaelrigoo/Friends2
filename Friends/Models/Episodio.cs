@@ -61,6 +61,9 @@ namespace Friends.Models
         /// Equipe que trabalhou neste episodio.
         /// </summary>
         /// 
-       
+
+        public int numeroEpisodionoGeral { get; set; }
+        public int numeroEpisodionaTemporada { get; set; }
+
     }
 }
