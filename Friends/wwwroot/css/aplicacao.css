@@ -75,3 +75,15 @@
 .padding{
     padding-left: 25px;
 }
+
+.texto-fichacompleta{
+    align-self:center;
+    margin-left:100px;
+}
+
+.upload-imagem {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    margin-left: 50px
+}
