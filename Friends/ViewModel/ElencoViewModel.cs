@@ -21,7 +21,9 @@ namespace Friends.ViewModel
         public string EstadoCivil { get; set; }
         public int QuantidadedeFilhos { get; set; }
         public string CaminhoImagem { get; set; }
+       
         public IFormFile ImagemElenco { get; set; }
+       
         public string ResumoPersonagem { get; set; }
         public string Carreira { get; set; }
     }

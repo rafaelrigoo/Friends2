@@ -38,7 +38,7 @@ namespace Friends.Controllers
                 .Include(t => t.Temporada)
                 .Where(e => e.Temporada.Numero == numeroTemporada)
                 .OrderBy(d => d.QuandoFoiLancado);
-
+                
             return View(episodio);
         }
 

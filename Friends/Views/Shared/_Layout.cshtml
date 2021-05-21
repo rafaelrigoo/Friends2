@@ -30,15 +30,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Temporadas" asp-action="Index">Temporadas</a>
                         </li>
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Critica" asp-action="Index">Critica</a>
-                        </li>
+                        </li>*@
                         @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Curiosidade" asp-action="Index">Curiosidades</a>
                         </li>*@
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Quiz" asp-action="Index">Quiz</a>
-                        </li>
+                        </li>*@
                         @if (User.Identity.IsAuthenticated)
                         {
                            <li class="nav-item dropdown">
@@ -48,9 +48,9 @@
                                  <li><a class="dropdown-item" asp-controller="GerenciarEpisodio" asp-action="Index">Episódio</a></li>
                                  <li><a class="dropdown-item" asp-controller="GerenciarElenco" asp-action="Index">Elenco</a></li>
                                  <li><a class="dropdown-item" asp-controller="GerenciarCriadoPor" asp-action="Index">Criadores</a></li>
-                                 <li><a class="dropdown-item" asp-controller="GerenciarCuriosidade" asp-action="Index">Curiosidade</a></li>
+                                 @*<li><a class="dropdown-item" asp-controller="GerenciarCuriosidade" asp-action="Index">Curiosidade</a></li>
                                  <li><a class="dropdown-item" asp-controller="GerenciarCritica" asp-action="Index">Critica</a></li>
-                                 <li><a class="dropdown-item" asp-controller="GerenciarQuiz" asp-action="Index">Quiz</a></li>
+                                 <li><a class="dropdown-item" asp-controller="GerenciarQuiz" asp-action="Index">Quiz</a></li>*@
                             
                                </ul>
                            </li>

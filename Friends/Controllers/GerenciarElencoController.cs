@@ -46,6 +46,7 @@ namespace Friends.Controllers
                 QuantidadedeFilhos = artista.QuantidadedeFilhos,
                 ResumoPersonagem = artista.ResumoPersonagem,
                 Carreira = artista.Carreira
+
             };
 
             return View(model);
@@ -61,7 +62,6 @@ namespace Friends.Controllers
                 {
                     model.ImagemElenco.CopyTo(writer);
                 }
-
 
                 // pegar o arquivo e gravar na pasta /imagens; retornar o caminha relativo do arquvo /imagens/<nome do arquvo>.ext
                 var caminhoImagem = $"/imagens/{model.ImagemElenco.FileName}";

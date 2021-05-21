@@ -48,14 +48,16 @@
 
 
 
-    <div class="col-6">
-        <div class="form-group">
+    <div class="col-3">
+        <div class="form-group upload-imagem">
             <img class="img-fluid" id="imgElenco" src="@Model.CaminhoImagem" />
             <label class="btn btn-primary">
                 Alterar <input class="d-none" asp-for="ImagemElenco" type="file" accept="image/x-png,image/jpeg" />
             </label>
         </div><!-- /.form group -->
     </div>
+
+    
 
     <div class="col-12">
 
@@ -81,13 +83,10 @@
                     }
                     reader.readAsDataURL(input.files[0]);
                 }
-                //else {
-                //    $('#imgPerfil').attr('src', '~/Content/img/avatar3.png');
-                //}
+               
             });
 
         });
-
 
     </script>
 }
