@@ -12,15 +12,7 @@ namespace Friends.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var perg = new Quiz();
-            perg.Pergunta = "quem foi o primeiro?";
-
-            var perg2 = new Quiz();
-            perg2.Pergunta = "Quem viajou para?";
-
-            var listaperguntas = new List<Quiz>() { perg, perg2 };
-
-            return View(listaperguntas);
+            return View();
         }
 
         [HttpGet]

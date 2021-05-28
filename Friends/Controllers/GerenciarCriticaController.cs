@@ -12,15 +12,7 @@ namespace Friends.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var critica = new Critica();
-            critica.Comentario = "aisuduiasndm";
-
-            var critica2 = new Critica();
-            critica2.Comentario = "11111";
-
-            var listacritica = new List<Critica>() { critica, critica2 };
-
-            return View(listacritica);
+            return View();
         }
 
 

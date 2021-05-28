@@ -13,15 +13,7 @@ namespace Friends.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            var questao = new Quiz();
-
-            questao.Pergunta = "Qual era o sobrenome do meio de Chandler Bing?";
-
-            questao.Alternativas.Add(new Alternativa("Muriel", true));
-            questao.Alternativas.Add(new Alternativa("Morgan", false));
-
-            
-            return View(questao);
+            return View();
         }
     }
 }
